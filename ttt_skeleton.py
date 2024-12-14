@@ -13,10 +13,20 @@ r=row, c=column. You should
 3. call another method to check if the game has ended 
 '''
 def clicked(r,c):
+    print(r,c)
     global Player1
     '''
     Your code here 
     '''
+    if Player1 == 'X' and states[r][c] == 0 and stop_game == False:
+        b[r][c].configure(text = 'M') 
+        states[r][c] = 'X'
+        Player1 = 'O'
+    if Player1 == 'O' and states[r][c] == 0 and stop_game == False:
+        b[r][c].configure(text = 'N') 
+        states[r][c] = 'O'
+        Player1 = 'X'
+    
     pass 
 
 '''
@@ -36,7 +46,7 @@ def check_if_win():
 #Creating the Canvas 
 root = Tk()
 # Title of the window             
-root.title("Your title here")  
+root.title("TICTACETOE")  
 root.resizable(0,0)
  
 #Button
@@ -64,4 +74,4 @@ for i in range(3):
         b[i][j].grid(row = i, column = j)
 
 #starts the game loop 
-mainloop()   
+mainloop()  
