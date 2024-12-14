@@ -27,7 +27,7 @@ def clicked(r,c):
         states[r][c] = 'O'
         Player1 = 'X'
     
-    pass 
+    check_if_win()
 
 '''
 This method should check whether or not the game has been won. 
