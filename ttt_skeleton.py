@@ -47,20 +47,28 @@ def check_if_win():
         #columns 
         elif states[0][i] == states[1][i] == states[2][i] and states[0][i] != 0:
             stop_game = True
+            winner = messagebox.showinfo(f"{states[i]} won! cool good job from winkte")
             print("WINNER!!!!") #messagebox
             #break 
             exit()
         #d1 
         elif states[0][0] == states[1][1] == states[2][2] and states[0][0] != 0:
             stop_game = True
+            winner = messagebox.showinfo(f"{states[i]} won! cool good job from winkte")
             print("WINNER!!!")
             exit()
         #d2 
         elif states[2][0] == states[1][1] == states[0][2] and states[2][0] != 0: 
             stop_game = True
+            winner = messagebox.showinfo(f"{states[i]} won! cool good job from winkte")
             print("WINNER!!!")
             exit()
-        #handle tie 
+        else:
+            newList = [sublist for sublist in states if all(sublist)]
+            if len(newList) == 3:
+                winner = messagebox.showinfo(f"It's a tie!")
+                print("it's a tie!")
+            exit()
     pass 
 
 # Design window
@@ -96,3 +104,4 @@ for i in range(3):
 
 #starts the game loop 
 mainloop()  
+#remember to check the Independent to see if someone responded to Sophia's comment 
