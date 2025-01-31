@@ -41,13 +41,14 @@ def check_if_win():
         #rows 
         if states[i][0] == states[i][1] == states[i][2] and states[i][0] != 0:
             stop_game = True
-            winner = messagebox.showinfo("you won! cool good job from winkte")
+            winner = messagebox.showinfo(f"{states[i]} won! cool good job from winkte")
             print("WINNER!!!")
             break
         #columns 
         elif states[0][i] == states[1][i] == states[2][i] and states[0][i] != 0:
             stop_game = True
-            print("WINNER!!!!")
+            print("WINNER!!!!") #messagebox
+            #break 
             exit()
         #d1 
         elif states[0][0] == states[1][1] == states[2][2] and states[0][0] != 0:
@@ -59,6 +60,7 @@ def check_if_win():
             stop_game = True
             print("WINNER!!!")
             exit()
+        #handle tie 
     pass 
 
 # Design window
