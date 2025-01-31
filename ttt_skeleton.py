@@ -3,6 +3,7 @@ from tkinter import messagebox
 
 Player1 = 'X'
 stop_game = False
+symbol_map = {'X':'M', 'O':'N'}
 
 
 '''
@@ -41,34 +42,34 @@ def check_if_win():
         #rows 
         if states[i][0] == states[i][1] == states[i][2] and states[i][0] != 0:
             stop_game = True
-            winner = messagebox.showinfo(f"{states[i]} won! cool good job from winkte")
+            winner = messagebox.showinfo("Info", f"{symbol_map[states[i][0]]} won! cool good job from winkte")
             print("WINNER!!!")
             break
         #columns 
         elif states[0][i] == states[1][i] == states[2][i] and states[0][i] != 0:
             stop_game = True
-            winner = messagebox.showinfo(f"{states[i]} won! cool good job from winkte")
+            winner = messagebox.showinfo("Info", f"{symbol_map[states[0][i]]} won! cool good job from winkte")
             print("WINNER!!!!") #messagebox
             #break 
             exit()
         #d1 
         elif states[0][0] == states[1][1] == states[2][2] and states[0][0] != 0:
             stop_game = True
-            winner = messagebox.showinfo(f"{states[i]} won! cool good job from winkte")
+            winner = messagebox.showinfo("Info", f"{symbol_map[states[0][0]]} won! cool good job from winkte")
             print("WINNER!!!")
             exit()
         #d2 
         elif states[2][0] == states[1][1] == states[0][2] and states[2][0] != 0: 
             stop_game = True
-            winner = messagebox.showinfo(f"{states[i]} won! cool good job from winkte")
+            winner = messagebox.showinfo("Info", f"{symbol_map[states[2][0]]} won! cool good job from winkte")
             print("WINNER!!!")
             exit()
         else:
             newList = [sublist for sublist in states if all(sublist)]
             if len(newList) == 3:
-                winner = messagebox.showinfo(f"It's a tie!")
+                winner = messagebox.showinfo("Info", f"It's a tie!")
                 print("it's a tie!")
-            exit()
+                exit()
     pass 
 
 # Design window
